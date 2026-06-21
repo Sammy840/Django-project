@@ -1,0 +1,48 @@
+{% extends "master.html" %}
+<!DOCTYPE html> 
+<html> 
+<body>
+   <!-- The code on line 1 must be the first tag on the code. Hence it's at the top and the commented code below(which was meant to be at the top) -->
+   {% block title %} 
+   My Members - List of all members 
+   {% endblock %} 
+   {% block content %} 
+      <h1>Members</h1> 
+      <ul> 
+         {% for x in mymembers %} 
+         <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li>
+         {% endfor %} 
+      </ul> 
+   {% endblock %}
+</body> 
+</html>
+
+
+
+
+
+<!-- <!DOCTYPE html> 
+<html> 
+  <body> 
+     <h1>Members</h1> 
+     <ul> 
+        {% for x in mymembers %} 
+        <li>{{ x.firstname }} {{ x.lastname }}</li> 
+        {% endfor %} 
+     </ul> 
+  </body> 
+</html>  -->
+
+
+<!-- <!DOCTYPE html> 
+<html> 
+<body> 
+   <h1>Members</h1> 
+   <ul> 
+      {% for x in mymembers %} 
+      <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li>
+      {% endfor %} 
+   </ul> 
+</body> 
+</html> -->
+
