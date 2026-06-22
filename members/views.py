@@ -36,3 +36,34 @@ def details(request, id):
    'mymember': mymember, 
   } 
   return HttpResponse(template.render(context, request))
+
+def main(request): 
+    template = loader.get_template('main.html') 
+    return HttpResponse(template.render()) 
+
+
+# def testing(request): 
+#     template = loader.get_template('template.html') 
+#     context = { 
+#         'fruits': ['Apple', 'Banana', 'Cherry'], 
+#     } 
+#     return HttpResponse(template.render(context, request))
+
+
+# def testing(request): 
+#     template = loader.get_template('template.html') 
+#     context = { 
+#         'firstname': 'Linus',
+#     } 
+#     return HttpResponse(template.render(context, request))
+
+
+
+def testing(request): 
+    mymembers = Member.objects.all().values() 
+    template = loader.get_template('template.html') 
+    context = { 
+        'mymembers': mymembers, 
+        } 
+    return HttpResponse(template.render(context, request))
+
