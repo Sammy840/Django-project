@@ -1,23 +1,50 @@
+{% load static %}
 <!DOCTYPE html> 
 <html> 
+    <!-- <link rel="stylesheet" href="{% static 'myfirst.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'myglobal.css' %}">
 <body> 
-    <!-- {% for x in fruits %} 
+    {% for x in fruits %} 
         <h1>{{ x }}</h1> 
     {% endfor %} 
-    <p>In views.py you can see what the fruits variable looks like.</p>  -->
+    <p>In views.py you can see what the fruits variable looks like.</p> 
 
     <!-- {% with firstname="Tobias" %} <h1>Hello {{ firstname }}, how are you?</h1> {% endwith %}  -->
 
-    <ul> 
+    <!-- <ul> 
         {% for x in mymembers %} 
             <li>{{ x.firstname }}</li> 
         {% endfor %} 
-    </ul>
+    </ul> -->
 
+    <!-- {% for x in fruits %} <h1>{{ x }}</h1> {% endfor %} -->
 
-    
+    <!-- <h1>Welcome Everyone</h1>  -->
+    <!-- {% comment "this was the original welcome message" %} <h1>Welcome ladies and gentlemen</h1> {% endcomment %} -->
+
+    <!-- <h1>Hello</h1> <p>This page contains a footer in a template.</p> {% include 'footer.html' %}  -->
+
+    <!-- {% include "mymenu.html" with me="TOBIAS" sponsor="WDN" %} 
+    <h1>Welcome</h1> 
+    <p>This is my webpage</p>  -->
+
+    <!-- <table border='1'> 
+        <tr> 
+            <th>ID</th> 
+            <th>Firstname</th> 
+            <th>Lastname</th> 
+        </tr> 
+        {% for x in mymembers %} 
+        <tr> 
+            <td>{{ x.id }}</td> 
+            <td>{{ x.firstname }}</td> 
+            <td>{{ x.lastname }}</td> 
+        </tr> 
+        {% endfor %} 
+    </table> -->
+
 </body> 
-</html>
+</html> 
 
 
 
