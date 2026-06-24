@@ -118,4 +118,6 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'productionfiles' 
-STATICFILES_DIRS = [ BASE_DIR / 'mystaticfiles' ] 
+STATICFILES_DIRS = [ 
+    BASE_DIR / 'mystaticfiles' 
+] 
