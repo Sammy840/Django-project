@@ -1,23 +1,9 @@
 {% extends "master.html" %}
+
 <!DOCTYPE html> 
 <html> 
 <body>
    <!-- The code on line 1 must be the first tag on the code. Hence it's at the top and the commented code below(which was meant to be at the top) -->
-   {% block title %} 
-   My Members - List of all members 
-   {% endblock %} 
-   {% block content %} 
-      <!-- Link to return to main.html page -->
-      <!-- <p><a href="/">HOME</a></p>
-      <h1>Members</h1> 
-      <ul> 
-         {% for x in mymembers %} 
-         <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li>
-         {% endfor %} 
-      </ul> 
-   {% endblock %} -->
-
-
 
    {% block title %} My Members - List of all members {% endblock %} 
    {% block content %} 
