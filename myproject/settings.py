@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +21,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ak=#l+q%o-!=%ip+*9mzb_)%7jox^4l#78*l5!p7qio0z@9sib'
+SECRET_KEY = os.environ['SECRET_KEY'] 
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['myproject-env.eba-xec3njp2.us-east-1.elasticbeanstalk.com']
 
 
 # Application definition
@@ -74,23 +76,21 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+
+
+
 
 DATABASES = { 
     'default': { 
         'ENGINE': 'django.db.backends.postgresql', 
-        'NAME': 'postgres', 
-        'USER': 'postgres', 
-        'PASSWORD': 'Postgres2026', 
-        'HOST': 'database-1.cz0ie84mmej3.eu-north-1.rds.amazonaws.com', 
-        'PORT': '5432' 
+        'NAME': os.environ.get('DB_NAME'), 
+        'USER': os.environ.get('DB_USER'), 
+        'PASSWORD': os.environ.get('DB_PASSWORD'), 
+        'HOST': os.environ.get('DB_HOST'), 
+        'PORT': os.environ.get('DB_PORT'), 
         } 
     } 
+
 
 
 
@@ -133,3 +133,6 @@ STATIC_ROOT = BASE_DIR / 'productionfiles'
 STATICFILES_DIRS = [ 
     BASE_DIR / 'mystaticfiles' 
 ] 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' 
+
+
